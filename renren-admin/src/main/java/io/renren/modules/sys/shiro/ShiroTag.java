@@ -27,6 +27,7 @@ public class ShiroTag {
 	 */
 	public boolean hasPermission(String permission) {
 		Subject subject = SecurityUtils.getSubject();
+		subject.isPermitted(permission);
 		return subject != null && subject.isPermitted(permission);
 	}
 
